@@ -1,0 +1,526 @@
+@import 'media.css';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    transition: 0.5s;
+    scroll-behavior: smooth;
+}
+
+/* cores hexa*/
+:root{
+    --bg-pink1:#FFEADD;
+    --bg-pink2:#FCAEAE;
+    --bg-pink3:#FF8989;
+    --bg-pink4:#FF6666;
+
+    --bg-green1:#425F57;
+    --bg-green2:#749F82;
+    --bg-green3:#A8E890;
+    --bg-green4:#CFFF8D;
+
+    --bg-blue1:#4A55A2;
+    --bg-blue2:#7895CB;
+    --bg-blue3:#A0BFE0;
+    --bg-blue4:#C5DFF8;
+
+    --bg-yellow1:#F7FF93;
+    --bg-yellow2:#FFEA54;
+    --bg-yellow3:#FFCB3C;
+    --bg-yellow4:#FEAA2B;  
+}
+
+/**Geral**/
+/*configurando imagens*/
+img{width: 100%;height: 100%;object-fit: cover;}
+
+
+/** ESTILIZANDO */
+/**Menu*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px;
+    z-index: 1000;
+}
+header .logo{
+    position: relative;
+    display: inline-block;
+}
+header ul{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li a{
+    position: relative;
+    display: inline-block;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 1.1em;
+}
+header.sticky{
+    padding: 5px 100px;
+    background: var(--bg-blue2);
+}
+header.sticky ul li a{
+    color: #000;
+}
+header ul li a:hover{
+    color:var(--bg-blue1);
+}
+header.sticky ul li a:hover{
+    color: var(--bg-blue4);
+}
+
+/**Banner*/
+.banner{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    background: url('/public/images/pet/foto2.jpg') no-repeat;
+    background-size: cover;
+}
+.banner::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+.banner .content{
+    position: absolute;
+    max-width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 100;
+    margin: 50px;
+    bottom: 0;
+}
+.banner .content h1{
+    font-size: 2.3em;
+    font-weight: 400;
+    color: #fff;
+}
+.banner .content p{
+    font-size: 1.5em;
+    line-height: 1.35em;
+    color: #fff;
+    padding-top: 10px;
+}
+.banner .content a{
+    position: relative;
+    background: var(--bg-green3);
+    font-size: 1.3em;
+    width: 150px;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+.banner .content a:hover{
+    background: var(--bg-green2);
+}
+/**Apresentação */
+.apres{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    width: 100%;
+    min-height: 100vh;
+}
+.apres .container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+.apres .container .circle{
+    /*border: 1px solid #000;*/
+    width: 250px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.apres .container .circle img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.apres .container .circle h2{
+    text-align: center;
+    padding-top: 10px;
+}
+/**Sobre*/
+.about{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    margin-bottom: 100px;
+   
+}
+.about .imgBox{
+    position: relative;
+    width: 500px;
+    height: 100vh;
+    background: url('/public/images/pet/foto3.jpg') no-repeat center;
+    background-size: cover;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    left: 0;
+    box-shadow: 5px 5px 19px 5px rgba(0,0,0,0.3);
+}
+.about .content{
+    position: relative;
+    max-width: 700px;
+    height: 100vh;
+    padding: 40px;
+    margin: 50px;
+}
+.about .content h1{
+    font-size: 2em;
+    font-weight: 400;
+}
+.about .content p{
+    font-size: 1.4em;
+    line-height: 1.23em;
+    padding-top: 30px;
+}
+
+/**Informação*/
+.info{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg-green3);
+    overflow: hidden;
+}
+.info .img-left{
+    position: relative;
+    background: url('/public/images/pet/cat1.png') no-repeat bottom;
+    background-size: contain;
+    /*border: 1px solid #000;*/
+    width: 400px;
+    height: 500px;
+    left: 0;
+}
+.info .img-right{
+    position: relative;
+    background: url('/public/images/pet/dog1.png') no-repeat;
+    background-size: contain;
+    /*border: 1px solid #000;*/
+    width: 300px;
+    height: 500px;
+    right: 0;
+}
+.info .text{
+    position: absolute;
+    /*border: 1px solid #000;*/
+    width: 900px;
+    height: 400px;
+    transform: translateX(25%);
+    padding: 30px 35px;
+    z-index: 1;
+}
+.info .text h1{
+    font-weight: 400;
+    text-align: center;
+}
+.info .text p{
+    font-size: 1.5em;
+    line-height: 1.2em;
+    text-align: center;
+    padding-top: 40px;
+}
+.info .buttons{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    /*border: 1px solid #000;*/
+}
+.info .text a{
+    position: relative;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 10px;
+    background: var(--bg-green2);
+    border-radius: 5px;
+    color: #000;
+    margin-left: 30px;
+}
+.info .text a:nth-child(2){
+    background: var(--bg-green2);
+}
+.info .text a:hover{
+    letter-spacing: 3px;
+    background: var(--bg-green1);
+    color: #fff;
+}
+/* 2° informação eventos/calendario*/
+.info .img-left-top{
+    position: relative;
+    background: url('/public/images/pet/coelho1.png') no-repeat bottom;
+    background-size: contain;
+    /*border: 1px solid #000;*/
+    width: 400px;
+    height: 500px;
+    left: 0;
+}
+.info .textEvents{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /*border: 1px solid #000;*/
+    max-width: 900px;
+    margin: 40px;
+    padding: 30px 35px;
+    right: 0;
+    z-index: 1;
+}
+.info .textEvents h1{
+    font-weight: 400;
+}
+.info .textEvents h2{
+    padding-top: 10px;
+    font-weight: 300;
+}
+.info .textEvents ul li{
+    padding: 4px;
+    font-size: 1.1em;
+}
+
+/**Serviços*/
+.service{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 50px;
+    overflow: hidden;
+}
+.service .contentText{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+.service .container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.service .container .box{
+    position: relative;
+    background: var(--bg-blue1);
+    width: 400px;
+    height: 350px;
+    overflow: hidden;
+}
+.service .container .box .imgBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.service .container .box .content{
+    width: 100%;
+    height: 100%;
+    background: var(--bg-blue3);
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transform: translateY(60%);
+    padding: 0 10px;
+}
+.service .container .box .content .text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(53%);
+    text-align: center;
+    color: #fff;
+}
+.service .container .box .content .text h2{
+    padding-bottom: 30px;
+    color: #000;
+}
+.service .container .box .content .text p{
+    font-size: 1.2em;
+    line-height: 1.2em;
+    font-weight: 300;
+    text-shadow: 0px 0px 2px #000;
+}
+.service .container .box .content .text a{
+    background: var(--bg-blue1);
+    padding: 5px 8px;
+    margin-top: 15px;
+    border-radius: 4px;
+    color: #fff;
+}
+.service .container .box .content .text a:hover{
+    letter-spacing: 2px;
+}
+.service .container .box .content:hover{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background: rgb(120, 149, 203, 0.3);
+    transform: translateY(0);
+}
+
+footer{
+    background: var(--bg-blue1);
+    padding: 70px 0;
+}
+footer .row{
+    display: flex;
+    flex-wrap: wrap;
+}
+footer .row .box{
+     width: 25%;
+     padding: 0 15px;
+}
+footer .row .box h3{
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 500;
+    position: relative;
+}
+footer .row .box a{
+    display: block;
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 300;
+    padding-top: 5px;
+}
+footer .row .box a:hover{
+    text-decoration: underline;
+    padding-left: 8px;
+    color: var(--bg-blue4);
+}
+footer .row .contact p{
+    padding-top: 10px;
+}
+footer .row .contact img{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    
+}
+
+@media (max-width:991px){
+    p{text-align: justify;}
+    header{padding: 20px;}
+    header .navbar{display: none;}
+    header .navbar.active{
+        position: fixed;
+        background: var(--bg-blue2);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+    }
+    header ul li{margin: 10px 0;}
+    header ul li a{margin-left: 0;}
+    header .menu{padding: 5px 60px;}
+    header.sticky .menu{padding: 5px 40px;}
+    header .menu{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background: url('/public/images/icones/menu-aberto.png') no-repeat;
+        background-size: 50px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+    .menu .active{background: url('/public/images/icones/cruz.png') no-repeat;background-size: 50px;}
+
+    .banner .content {max-width: 100%;}
+    .apres .container {justify-content: center;align-items: center;}
+    
+    .about,.info{flex-direction: column;min-height:70vh;}
+    .about .content {max-width: 700px;height: 70vh;padding: 40px;}
+    .about .imgBox {width:100%;height:60vh;border-top-right-radius:0;border-bottom-right-radius:0;}
+    .info .text {position: relative;width: 100%;transform: translateX(0);}
+    .info .img-left {width: 500px;}
+    .info .img-right {width: 500px;background-position:center;}
+    .service .container {grid-template-columns: repeat(2,1fr);}
+    .service .container .box .content{transform: translateY(0);border-top-left-radius:0;border-top-right-radius:0;background: rgb(120, 149, 203, 0.3);}
+    .info .img-left-top{width: 100%;background-position: center;}
+    .info .textEvents {position: relative;;background: rgb(66, 95, 87, 0.5);right: 0;margin: 40px;}
+    .info .textEvents ul li{font-size: 1.3em;}
+}
+
+@media (max-width:769px){
+    h1{font-size: 1.4em;}
+    header {padding: 20px;}
+    header .menu {
+        padding: 0 40px;
+    }
+    header.sticky,
+    header.sticky.menu{position: fixed;padding: 5px 30px;}
+
+    .banner .content{margin: 15px 30px;}
+    .banner .content p{font-size: 1.2em;}
+
+    .about, .info{min-height: 50vh;}
+    .service .container {grid-template-columns: repeat(1,1fr);}
+    .about .content {max-width: 100%;height: 100%;padding: 10px;margin: 20px;}
+
+    
+    .info .img-right{width: 200px;height: 200px;background-position: center;}
+    .info .buttons{flex-direction: column;}
+    .info .buttons a{margin-top: 20px;}
+
+    .service .container .box .content .text{
+        padding: 20px;
+    }
+
+    .info .text{position: relative;width: 100%;height: 100%;}
+    .info .text p{text-align: justify;}
+    .info .img-left{position: relative;width: 200px;height: 200px;
+        background: url(/images/pet/dog-cat-filhote.png) no-repeat center;
+        background-size: contain;
+    }
+    .info .textEvents{position: relative;}
+}
